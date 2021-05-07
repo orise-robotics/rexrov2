@@ -3,7 +3,7 @@ project(rexrov2_description)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY launch xacro meshes robots
+install(DIRECTORY launch urdf meshes robots
   DESTINATION share/${PROJECT_NAME}
 )
 

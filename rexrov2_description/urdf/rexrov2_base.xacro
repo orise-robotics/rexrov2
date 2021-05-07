@@ -15,9 +15,9 @@
      limitations under the License.
 -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
-  <xacro:include filename="$(find rexrov2_description)/xacro/common.urdf.xacro"/>
+  <xacro:include filename="$(find rexrov2_description)/urdf/common.urdf.xacro"/>
   <!-- <xacro:include filename="$(find uuv_sensor_ros_plugins)/xacro/sensor_snippets.xacro"/> -->
-  <xacro:include filename="$(find rexrov2_description)/xacro/rexrov2_snippets.xacro" />
+  <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2_snippets.xacro" />
   <!-- <xacro:include filename="$(find uuv_gazebo_ros_plugins)/xacro/snippets.xacro"/> -->
   
   <!-- Parameters -->

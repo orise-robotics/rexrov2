@@ -13,14 +13,18 @@ from launch.substitutions import LaunchConfiguration, ThisLaunchFileDir
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 import xacro
-
+from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     
     x = LaunchConfiguration('x', default='0.0')
     y = LaunchConfiguration('y', default='0.0')
     z = LaunchConfiguration('z', default='1.0')
-    urdf_file = PathJoinSubstitution([FindPackageShare('rexrov2_description'), 'robots/teste.xacro'])
+    #urdf_file = PathJoinSubstitution([FindPackageShare('rexrov2_description'), 'robots/rexrov2_default.xacro'])
+    urdf_file = os.path.join(get_package_share_directory('rexrov2_description'), 'robots/rexrov2_default.xacro')
+    #Command([ExecutableInPackage(package='xacro', executable='xacro'), ' ', urdf_file])
+    
+    robot = xacro.process(urdf_file)
 
     gazebo = ExecuteProcess(
           cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_factory.so'],
@@ -32,8 +36,8 @@ def generate_launch_description():
             name='robot_state_publisher',
             output='screen',
             parameters=[{
-                'robot_description':
-                Command([ExecutableInPackage(package='xacro', executable='xacro'), ' ', urdf_file])
+                'robot_description': robot
+                
             }])
 
     spawn_entity = Node(

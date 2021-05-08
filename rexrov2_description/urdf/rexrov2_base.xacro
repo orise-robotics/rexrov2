@@ -27,7 +27,7 @@
   <xacro:property name="mass" value="1862.87"/>
 
   <xacro:macro name="rexrov2_base"
-    params="namespace *gazebo use_simplified_mesh inertial_reference_frame">
+    params="namespace use_simplified_mesh inertial_reference_frame"> <!-- *gazebo -->
     <!-- Defining base link according to ROS conventions: x forward, z up -->
     <link name="${namespace}/base_link">
       <inertial>
@@ -96,10 +96,10 @@
     </link>
 
     <!-- Set up hydrodynamic plugin given as input parameter -->
-    <xacro:insert_block name="gazebo"/>
+    <!-- <xacro:insert_block name="gazebo"/> -->
 
-    <!-- <xacro:include filename="$(find rexrov2_description)/xacro/rexrov2_sensors.xacro" />
-    <xacro:include filename="$(find rexrov2_description)/xacro/rexrov2_actuators.xacro" /> -->
+    <!-- <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2_sensors.xacro" />  -->
+    <!-- <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2_actuators.xacro" /> -->
 
   </xacro:macro>
 

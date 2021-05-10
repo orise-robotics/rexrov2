@@ -1,7 +1,3 @@
-import os
-
-import launch
-import launch_ros.actions
 from launch_ros.actions import Node
 from launch_ros.substitutions import ExecutableInPackage
 from launch_ros.substitutions import FindPackageShare
@@ -9,9 +5,9 @@ from launch.substitutions import Command
 from launch.substitutions import PathJoinSubstitution
 from launch.actions import ExecuteProcess, IncludeLaunchDescription
 from launch import LaunchDescription
-from launch.substitutions import LaunchConfiguration, ThisLaunchFileDir
-from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
 
+import os
 import xacro
 from ament_index_python.packages import get_package_share_directory
 
@@ -36,8 +32,8 @@ def generate_launch_description():
             name='robot_state_publisher',
             output='screen',
             parameters=[{
-                'robot_description': robot
-                
+                'robot_description': 
+                robot
             }])
 
     spawn_entity = Node(

@@ -27,8 +27,7 @@
   <xacro:property name="mass" value="1862.87"/>
 
   <xacro:macro name="rexrov2_base"
-    params="namespace use_simplified_mesh inertial_reference_frame"> <!-- *gazebo -->
-    <!-- Defining base link according to ROS conventions: x forward, z up -->
+    params="namespace use_simplified_mesh inertial_reference_frame">
     <link name="${namespace}/base_link">
       <inertial>
         <mass value="${mass}"/>

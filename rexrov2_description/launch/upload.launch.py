@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
-
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.substitutions import ExecutableInPackage
@@ -23,15 +21,14 @@ from launch import LaunchDescription
 from launch.substitutions import LaunchConfiguration
 from launch.substitutions import PathJoinSubstitution
 from launch.substitutions import Command
-import xacro
+
 
 def generate_launch_description():
-    
     x = LaunchConfiguration('x', default='0.0')
     y = LaunchConfiguration('y', default='0.0')
     z = LaunchConfiguration('z', default='1.0')
-    urdf_file = PathJoinSubstitution([FindPackageShare('rexrov2_description'), 'robots/rexrov2_default.xacro'])
-    #robot = xacro.process(urdf_file)
+    urdf_file = PathJoinSubstitution(
+        [FindPackageShare('rexrov2_description'), 'robots/rexrov2_default.xacro'])
 
     gazebo = ExecuteProcess(
           cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_factory.so'],
@@ -52,10 +49,10 @@ def generate_launch_description():
     spawn_entity = Node(
             package='gazebo_ros',
             executable='spawn_entity.py',
-            arguments=['-entity', 'rexrov2', '-topic', '/robot_description',
-                '-x',  x, '-y', y, '-z', z],
+            arguments=[
+                '-entity', 'rexrov2', '-topic', '/robot_description', '-x', x, '-y', y, '-z', z],
             output='screen')
-            
+
     return LaunchDescription([
         gazebo,
         rsp,

@@ -10,5 +10,7 @@ jobs:
       - uses: ros-tooling/setup-ros@v0.2
       - uses: ros-tooling/action-ros-ci@v0.2
         with:
-          package-name: rexrov2
+          package-name: 
+            rexrov2
+            rexrov2_description
           target-ros2-distro: foxy

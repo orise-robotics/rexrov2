@@ -6,11 +6,11 @@
   <description>The robot description files for the RexROV 2 underwater vehicle and launch files to spawn the model in different configurations.</description>
 
   <maintainer email="borgesjvt@gmail.com">João Victor Torres Borges</maintainer>
-  <license>Apache-2.0</license>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <license>Apache License 2.0</license>
 
-  <exec_depend>gazebo</exec_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>xacro</exec_depend>

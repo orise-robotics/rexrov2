@@ -9,6 +9,10 @@
 
   <license>Apache License 2.0</license>
 
+  <author email="Musa.Marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</author>
+  <author email="sebastian.scherer2@de.bosch.com">Sebastian Scherer</author>
+  <author email="LuizRicardo.Douat@de.bosch.com">Luiz Ricardo Douat</author>
+
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <exec_depend>gazebo_ros</exec_depend>

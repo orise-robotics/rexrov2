@@ -16,8 +16,10 @@
 -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
   <xacro:include filename="$(find rexrov2_description)/urdf/common.urdf.xacro"/>
+  <!-- (Open Rise) TODO the following line is commented because functionality is not done yet -->
   <!-- <xacro:include filename="$(find uuv_sensor_ros_plugins)/xacro/sensor_snippets.xacro"/> -->
   <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2_snippets.xacro" />
+  <!-- (Open Rise) TODO the following line is commented because functionality is not done yet -->
   <!-- <xacro:include filename="$(find uuv_gazebo_ros_plugins)/xacro/snippets.xacro"/> -->
   
   <!-- Parameters -->
@@ -95,6 +97,7 @@
     </link>
 
     <!-- Set up hydrodynamic plugin given as input parameter -->
+  <!-- (Open Rise) TODO the following lines are commented because functionalities are not done yet -->
     <!-- <xacro:insert_block name="gazebo"/> -->
 
     <!-- <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2_sensors.xacro" />  -->

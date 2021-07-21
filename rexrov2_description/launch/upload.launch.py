@@ -28,7 +28,7 @@ def generate_launch_description():
     y = LaunchConfiguration('y', default='0.0')
     z = LaunchConfiguration('z', default='1.0')
     urdf_file = PathJoinSubstitution(
-        [FindPackageShare('rexrov2_description'), 'robots/rexrov2_default.xacro'])
+        [FindPackageShare('rexrov2_description'), 'robots', 'rexrov2_default.xacro'])
 
     gazebo = ExecuteProcess(
           cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_factory.so'],
